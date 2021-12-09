@@ -4,11 +4,14 @@ const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+    port: 587,
+    secure: false,
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
+    },
+    tls :{
+        rejectUnauthorized: false
     }
 });
 
@@ -124,10 +127,10 @@ router.post('/', (req, res, next) => {
     }
 
     if (error_send) {
-        const response = {
+        const responseErr = {
             message: "Falha no envio do email!"
         }
-        return res.status(401).send(response);
+        return res.status(401).send(responseErr);
     } else {
         return res.status(201).send(response);
     }
