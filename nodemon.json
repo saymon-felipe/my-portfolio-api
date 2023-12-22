@@ -1,0 +1,8 @@
+{
+    "env": {
+        "PORT": 4800,
+        "URL_SITE": "http://192.168.15.43:8080",
+        "EMAIL_USER": "saymonfelipe2001@gmail.com",
+        "EMAIL_PASS": "oosbnqdpadzgtjyh"
+    }
+}
